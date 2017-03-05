@@ -56,7 +56,7 @@ class Razorpay extends PaymentModule
         parent::install();
 
         //Create Payment Hooks
-        $this->registerHook('payment');
+        $this->registerHook('paymentOptions');
         $this->registerHook('paymentReturn');
 
     }
@@ -157,7 +157,7 @@ class Razorpay extends PaymentModule
     }
 
 
-    public function hookPayment($params)
+    public function hookPaymentOptions($params)
     {
         global $smarty;
         $smarty->assign(array(
